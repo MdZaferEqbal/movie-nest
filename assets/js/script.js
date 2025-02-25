@@ -36,7 +36,7 @@ function returnMovies(url) {
             const movieLink = document.createElement("a");
             movieLink.classList.add("movie-link");
             movieLink.target = "_blank";
-            movieLink.href = "https://www.google.com/search?q=" + result.title;
+            movieLink.href = "https://www.themoviedb.org/movie/" + result.id;
 
             div_card.appendChild(movieLink);
             movieLink.appendChild(img);

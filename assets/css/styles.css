@@ -54,6 +54,13 @@ body {
     justify-content: space-between;
 }
 
+.movie-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .card {
     min-height: 50vh;
     min-width: 300px;
@@ -62,10 +69,13 @@ body {
     padding: 15px;
     flex-grow: 1;
     border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
     text-align: center;
+    cursor: pointer;
+    transition: transform 250ms ease-in-out;
+}
+
+.card--hover:hover {
+    transform: scale(1.1);
 }
 
 .thumbnail {
@@ -99,6 +109,10 @@ body {
 @media (max-width: 422px) and (min-width: 390px) {
     .website-title {
         font-size: 1rem;
+    }
+     
+    .card--hover:hover {
+        transform: scale(1.01);
     }
 }
 

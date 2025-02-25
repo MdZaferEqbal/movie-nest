@@ -10,10 +10,15 @@ returnMovies(APILINK);
 
 function returnMovies(url) {
     fetch(url).then(res => res.json()).then(function(data) {
-        console.log(data.results);
         data.results.forEach(result => {
             const div_card = document.createElement("div");
             div_card.classList.add("card");
+
+            if ( window.matchMedia("(pointer: coarse)").matches ) {
+                div_card.classList.remove("card--hover");
+            } else {
+                div_card.classList.add("card--hover");
+            }
 
             const img = document.createElement("img");
             img.classList.add("thumbnail");
@@ -28,9 +33,15 @@ function returnMovies(url) {
             movieReleaseDate.classList.add("movie-release-date");
             movieReleaseDate.innerText = result.release_date;
 
-            div_card.appendChild(img);
-            div_card.appendChild(movieTitle);
-            div_card.appendChild(movieReleaseDate);
+            const movieLink = document.createElement("a");
+            movieLink.classList.add("movie-link");
+            movieLink.target = "_blank";
+            movieLink.href = "https://www.google.com/search?q=" + result.title;
+
+            div_card.appendChild(movieLink);
+            movieLink.appendChild(img);
+            movieLink.appendChild(movieTitle);
+            movieLink.appendChild(movieReleaseDate);
 
             movieList.appendChild(div_card);
         });

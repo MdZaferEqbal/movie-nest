@@ -1,0 +1,109 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #131720;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.topnav {
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.website-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.website-icon {
+    height: 1.5rem;
+}
+
+.website-title {
+    color: wheat;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#query {
+    padding: 0.75em 1.25em;
+    border-radius: 10px;
+    border: none;
+    background-color: #171e2f;
+    color: grey;
+    outline: none;
+}
+
+.movie-list--container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    min-height: 50vh;
+    min-width: 300px;
+    flex-basis: calc(25% - 20px);
+    background-color: #171e2f;
+    padding: 15px;
+    flex-grow: 1;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.thumbnail {
+    border-radius: 15px;
+    width: 100%;
+    aspect-ratio: 16 / 20;
+    object-fit: cover;
+}
+
+.movie-title {
+    color: wheat;
+    display: inline-block;
+    letter-spacing: 0.1rem;
+}
+
+.movie-release-date {
+    color: rgba(128, 128, 128, 0.512);
+}
+
+.movie-overview {
+    color: grey;
+}
+
+.footer-text {
+    margin: 25px 0;
+    font-size: 14px;
+    text-align: center;
+    color: grey;
+}
+
+@media (max-width: 422px) and (min-width: 390px) {
+    .website-title {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 389px) {
+    .website-title {
+        display: none;
+    }
+}
